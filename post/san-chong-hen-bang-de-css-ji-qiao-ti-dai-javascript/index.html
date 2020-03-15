@@ -167,33 +167,205 @@
 </script>
             <div class="main">
                 <div class="container">
-                    <div class="post-wrap archive">
-                        
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                三种很棒的CSS技巧，替代JavaScript
+                            </h1>
                             
-                                <h3>
-                                    2018
-                                </h3>
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            Pandora 
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-15</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">1.0
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">201</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        <div class="post-content">
+                            <style>
+.div1{
+	background-color:#282A36;
+	color:#D1AC36;
+	}
+	.div2{
+	background-image: linear-gradient(135deg,#43CBFF,#9708cc);
+            -webkit-background-clip:text;
+            color: transparent;
+	font-weight: 700;
+	font-size:30px
+
+	}
+b{
+	color:red;
+	}
+</style>
+<ul>
+	  <li><b>:active</b> 伪类与CSS数据上报</li>
+		<li>超实用超高频使用的<b>:empty</b 伪类</li>
+		<li>用好<b>:only-child</b>伪类</li>
+</ul>
+<h2>1.:active伪类与CSS数据上报</h2>
+如果想要知道两个按钮的点击率，CSS开发者可以自己动手，无需劳烦JavaScript开发者去埋点：
+<div class="div1">
+.button-1:active::after {</br>
+  &nbsp;&nbsp;  content: url(./pixel.gif?action=click&id=button1);</br>
+ &nbsp; &nbsp;  display: none;</br>
+}</br>
+.button-2:active::after {</br>
+  &nbsp;&nbsp;  content: url(./pixel.gif?action=click&id=button2);</br>
+   &nbsp;&nbsp; display: none;</br>
+}
+</div>
+此时，当点击按钮的时候，相关行为数据就会上报给服务器，这种上报就算把JavaScript禁用掉也无法阻止，方便快捷，特别适合A/B测试。
+<h2>2. 超实用超高频使用的:empty 伪类</h2>
+:empty 伪类用来匹配空标签元素，例如：
+<div class="div1">
+	<xmp><div class="cs-empty"></div></xmp>
+.cs-empty:empty{</br>
+    width: 120px;</br>
+    padding: 20px;</br>
+    border: 10px dashed;</br>
+}
+	</div>
+	div 元素就会匹配:empty伪类，呈现出虚线框!
+	<h2>3. 用好:only-child伪类</h2>
+	<B>:only-child</B>是一个很给力的伪类，尤其在处理动态数据的时候，可以省去很多写JavaScript逻辑的成本。</br>
+	<B>:only-child</B> 意思是匹配没有任何兄弟元素的元素。例如，下面的 p 元素可以匹配:only-child伪类，因为其前后没有其他兄弟元素:
+<div class="div1">
+<xmp>	<div class="cs-confirm">
+    <!-- 可以匹配:only-child伪类 -->
+    <p class="cs-confirm-p">确定删除该内容？</p>
+</div></xmp>
+</div>
+虽然.icon元素后面有删除文字，但由于没有标签嵌套，是匿名文本，因此不影响.icon元素匹配:only-child伪类。</br>
+尤其需要使用:only-child伪类的场景是动态场景，也就是某个固定小模块，根据场景的不用，里面可能是一个子元素，也可能是多个子元素，元素个数不同，布局方式也不同，此时就是:only-child伪类大放异彩的时候。例如，某个加载元素（loading）模块里面可能就只有一张加载图片，也可能仅仅就是一段加载描述文字，也可能是加载图片和加载文字同时出现，此时:only-child伪类就非常好用。
+HTML示意如下：
+<div class="div1"><xmp>
+<!-- 1. 只有加载图片 -->
+<div class="cs-loading">
+    <img src="./loading.png" class="cs-loading-img">
+</div>
+<!-- 2. 只有加载文字 -->
+<div class="cs-loading">
+    <p class="cs-loading-p">正在加载中...</p>
+</div>
+<!-- 3. 加载图片和加载文字同时存在 -->
+<div class="cs-loading">
+    <img src="./loading.png" class="cs-loading-img">
+    <p class="cs-loading-p">正在加载中...</p>
+</div></xmp>
+</div>
+我们无需在父元素上专门指定额外的类名来控制不同状态的样式，直接活用:only-child伪类就可以让各种状态下布局都良好。
+<div class="div1">
+.cs-loading {</br>
+    height: 150px;</br>
+    position: relative;</br>
+    text-align: center;</br>
+    /* 与截图无关，截图示意用 */</br>
+    border: 1px dotted;</br>
+}</br>
+/* 图片和文字同时存在时在中间留点间距 */</br>
+.cs-loading-img {</br>
+    width: 32px; height: 32px;</br>
+    margin-top: 45px;</br>
+    vertical-align: bottom;</br>
+}</br>
+.cs-loading-p {</br>
+    margin: .5em 0 0;</br>
+    color: gray;</br>
+}</br>
+/* 只有图片的时候居中绝对定位 */</br>
+.cs-loading-img:only-child {</br>
+    position: absolute;</br>
+    left: 0; right: 0; top: 0; bottom: 0;</br>
+    margin: auto;</br>
+}</br>
+/* 只有文字的时候行号近似垂直居中 */</br>
+.cs-loading-p:only-child {</br>
+    margin: 0;</br>
+    line-height: 150px;</br>
+}
+</div>
+	</br>
+<span class="div2">感谢你的阅读!</span>
+
+                        </div>
+                        
                                 
                                     
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>Pandora </span>
+                                                </p>
 
-                                        <article class="archive-item">
-                                            <a class="archive-item-link" href="https://wangjiajing.top/post/hello-gridea">
-                                                Hello Word
-                                            </a>
-                                            <span class="archive-item-date">2018-12-12 </span>
-                                        </article>
-                                        
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://wangjiajing.top/post/san-chong-hen-bang-de-css-ji-qiao-ti-dai-javascript">https://wangjiajing.top/post/san-chong-hen-bang-de-css-ji-qiao-ti-dai-javascript</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
                                             
                                                 
-                    </div>
-                    <div class="pagination-container">
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wangjiajing.top/post/san-chong-hen-bang-de-css-ji-qiao-ti-dai-javascript"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wangjiajing.top/post/san-chong-hen-bang-de-css-ji-qiao-ti-dai-javascript&sharesource=qzone&title=三种很棒的CSS技巧，替代JavaScript&pics=https://wangjiajing.top/images/avatar.png?v=1584277739655&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://wangjiajing.top/post/san-chong-hen-bang-de-css-ji-qiao-ti-dai-javascript&sharesource=weibo&title=三种很棒的CSS技巧，替代JavaScript + " - " + &pic="https://wangjiajing.top/images/avatar.png?v=1584277739655 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
                         
-                            
-                                    
-                                            
-                    </div>
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://wangjiajing.top/post/hello-gridea">
+                                                                                                    Hello Word
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                                            
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -266,5 +438,8 @@
                 
         </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
