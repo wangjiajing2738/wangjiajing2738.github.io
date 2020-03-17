@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangjiajing.top</id>
     <title>Pandora </title>
-    <updated>2020-03-17T07:04:19.853Z</updated>
+    <updated>2020-03-17T07:08:06.914Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangjiajing.top"/>
     <link rel="self" href="https://wangjiajing.top/atom.xml"/>
@@ -22,6 +22,9 @@
 	font-weight:700 ;
 	margin-bottom:15px;
 	}
+	.div_font-size{
+	font-size:20px;
+	}
 	   table{
             border-collapse:collapse;
             text-align: center;
@@ -33,7 +36,8 @@
             background-color: #f7f7f7;
         }
 </style>
-<p><strong>本地存储(Web Storage/localStorage)与会话存储(Cookie)</strong></p>
+<div id="div_font-size">
+**本地存储(Web Storage/localStorage)与会话存储(Cookie)**
 <div class="div1">相同之处：</div>
 <p>1.二者都可能会被禁用；</p>
 <p>2.存储的数据量都有最大限制:</p>
@@ -89,7 +93,8 @@
         <td>同 LocalStorage</td>
     </tr>
 </table>
-![](https://wangjiajing.top/post-images/1584428608385.jpg)
+	</div>
+![](https://wangjiajing.top/post-images/1584428793295.jpg)
 ]]></content>
     </entry>
     <entry>
