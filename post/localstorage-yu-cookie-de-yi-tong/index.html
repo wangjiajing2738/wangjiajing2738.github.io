@@ -167,33 +167,191 @@
 </script>
             <div class="main">
                 <div class="container">
-                    <div class="post-wrap archive">
-                        
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                LocalStorage与Cookie的异同
+                            </h1>
                             
-                                <h3>
-                                    2018
-                                </h3>
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            Pandora 
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-17</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">0.5
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">94</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        <div class="post-content">
+                            <style>
+.div1{
+	color:#339900;
+	font-weight:700 ;
+	margin-bottom:15px;
+	}
+	   table{
+            border-collapse:collapse;
+            text-align: center;
+        }
+        td{
+            border: 1px solid;
+        }
+        tr:nth-of-type(odd){
+            background-color: #f7f7f7;
+        }
+</style>
+<p><strong>本地存储(Web Storage/localStorage)与会话存储(Cookie)</strong></p>
+<div class="div1">相同之处：</div>
+<p>1.二者都可能会被禁用；</p>
+<p>2.存储的数据量都有最大限制:</p>
+<p>3.Cookie内存为4kb；</p>
+<p>4.Web Storage是5MB或者更少一些；</p>
+<p>5.用户随时可以删除或创建/修改存储目录中的内容；</p>
+<p>6.浏览器也可能会自动让存储目录中的内容&quot;过期&quot;；</p>
+<p>7.空间配额是以域名为单位分配的，而且由所有子域共享(也就是site1.example.com、site2.example.com、site3.example.com共享同一个目录)；</p>
+<p>8.最好都不要用来保存重要的内容；</p>
+<div class="div1">存在差别:</div>
+<p>1.通过Web Storage API保存的数据只能在客户端查询，不能被服务器端查询；</p>
+<p>2.存储的内容不会随着每个请求“来来回回”传递；</p>
+<p>3.除了sessionStorage（它会在会话结束时删除自己保存的数据）以外，不能明确指定数据的过期时间；</p>
+<div class="div1">Web Strorage:</div>
+<p>1.缓存对象以提升用户下次打开应用时的加载速度、保存正在撰写的文件草稿，甚至还可以把它当成虚拟的内存容器来使用；</p>
+<p>2.它以键值对数组的形式保存数据，所有数据都一字符串形式存储；</p>
+<p>3.localStorage与sessionStorage之间的区别是前者永久保存数据(或保存到用户或浏览器处理它们)，而后者只会在“会话”期间保存数据（关闭标签页或窗口后就没有了）；</p>
+<p>4.假如存储的数据量超过了5MB，那浏览器就会抛出QUOTA_EXCEENED_ERR的异常。</p>
+<p>为此，一定别忘了把localStorage或sessionStorage封装在一个try-catch块中，就像其它处理异常的代码一样；</p>
+<table border="1" width="100%" >
+    <tr>
+        <td>特性</td>
+        <td>Cookie</td>
+        <td>LocalStorage</td>
+        <td>
+            sessionStorage
+        </td>
+    </tr>
+    <tr>
+        <td>数据的声明周期</td>
+        <td>一般由服务器生成，可设置失效时间。如果在浏览器生成，默认是关闭浏览器之后失效</td>
+        <td>除非被清楚，否则永久保存</td>
+        <td>
+            仅在当前会话有效，关闭页面或浏览器后被清除
+        </td>
+    </tr>
+    <tr>
+        <td>存放数据大小</td>
+        <td>4KB</td>
+        <td>5KB</td>
+        <td>5KB</td>
+    </tr>
+    <tr>
+        <td>与服务端通信</td>
+        <td>每次都会携带在HTTP头中，如果使用 cookie 保存过多数据会带来性能问题</td>
+        <td>仅在客户端中保存，不参与和服务器的通信</td>
+        <td>同 LocalStorage</td>
+    </tr>
+    <tr>
+        <td>用途</td>
+        <td>一般由服务器端生成，用于标识用户身份</td>
+        <td>用于浏览器端缓存数据</td>
+        <td>同 LocalStorage</td>
+    </tr>
+</table>
+![](https://wangjiajing.top/post-images/1584428608385.jpg)
+
+                        </div>
+                        
                                 
                                     
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>Pandora </span>
+                                                </p>
 
-                                        <article class="archive-item">
-                                            <a class="archive-item-link" href="https://wangjiajing.top/post/hello-gridea">
-                                                Hello Word
-                                            </a>
-                                            <span class="archive-item-date">2018-12-12 </span>
-                                        </article>
-                                        
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong">https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
                                             
                                                 
-                    </div>
-                    <div class="pagination-container">
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong&sharesource=qzone&title=LocalStorage与Cookie的异同&pics=https://wangjiajing.top/images/avatar.png?v=1584428655023&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong&sharesource=weibo&title=LocalStorage与Cookie的异同 + " - " + &pic="https://wangjiajing.top/images/avatar.png?v=1584428655023 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
                         
-                            
-                                    
-                                            
-                    </div>
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://wangjiajing.top/post/san-chong-hen-bang-de-css-ji-qiao-ti-dai-javascript">
+                                                                                                    三种很棒的CSS技巧，替代JavaScript
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                                            
+                                                <div id="vlaine-comment"></div>
+<script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: '',
+    appKey: '',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: false,
+    recordIP: false,
+  })
+</script>
+                                                    
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -266,5 +424,8 @@
                 
         </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
