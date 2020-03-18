@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangjiajing.top</id>
     <title>Pandora  个人博客 </title>
-    <updated>2020-03-18T10:48:23.656Z</updated>
+    <updated>2020-03-18T15:22:40.011Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangjiajing.top"/>
     <link rel="self" href="https://wangjiajing.top/atom.xml"/>
@@ -10,6 +10,39 @@
     <logo>https://wangjiajing.top/images/avatar.png</logo>
     <icon>https://wangjiajing.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Pandora  个人博客 </rights>
+    <entry>
+        <title type="html"><![CDATA[浮动元素引起的问题和解决方法]]></title>
+        <id>https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie</id>
+        <link href="https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie">
+        </link>
+        <updated>2020-03-18T11:14:00.000Z</updated>
+        <content type="html"><![CDATA[<h3>浮动元素引起的问题</h3>
+1.父元素的高度无法被撑开，影响与父元素同级的元素。</br>
+2.与浮动同级的非浮动会紧跟其后。</br>
+3.若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构。</br>
+</br>
+解决方法：</br>
+使用clear:both;属性来清除元素的浮动可解决2、3问题，对于问题1，添加如下样式，给父元素添加.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;} .clearfix{display: inline-block;} /* for IE/Mac *</br>
+清除浮动的几种方法：
+</br>
+</br>
+<div style="background-color:#FAFAFA">
+1，额外标签法<xmp style="display:inline-table;"><div style="clear:both;"></div></xmp>（缺点：不过这个办法会增加额外的标签使HTML结构看起来不够简洁。）</br>
+2，使用after伪类
+<p>#parent:after{<br>
+content:&quot;.&quot;;<br>
+height:0;<br>
+visibility:hidden;<br>
+display:block;<br>
+clear:both;<br>
+}</p>
+<p>3,浮动外部元素<br>
+4,设置<code>overflow</code>为<code>hidden</code>或者<code>auto</code></p>
+</div>
+<h2>end!</h2>
+<p><img src="https://wangjiajing.top/post-images/1584544938864.jpg" alt=""></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[LocalStorage与Cookie的异同]]></title>
         <id>https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong</id>

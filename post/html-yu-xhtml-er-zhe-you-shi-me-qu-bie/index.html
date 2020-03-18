@@ -170,7 +170,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                关于
+                                浮动元素引起的问题和解决方法
                             </h1>
                             
                                     <!--zh-->
@@ -179,11 +179,11 @@
                                         <a itemprop="author" rel="author" href="/">
                                             Pandora  个人博客 
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2019-01-25</a></span>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-03-18</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">0.0
+                                    href="#">0.2
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">3</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">41</a></span>
                                         
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
@@ -192,7 +192,31 @@
                                     
                         </header>
                         <div class="post-content">
-                            <p>这是关于的页面，可以在这里向世界介绍你！<img src="https://wangjiajing.top/post-images/1584544929786.jpg" alt=""></p>
+                            <h3>浮动元素引起的问题</h3>
+1.父元素的高度无法被撑开，影响与父元素同级的元素。</br>
+2.与浮动同级的非浮动会紧跟其后。</br>
+3.若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构。</br>
+</br>
+解决方法：</br>
+使用clear:both;属性来清除元素的浮动可解决2、3问题，对于问题1，添加如下样式，给父元素添加.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;} .clearfix{display: inline-block;} /* for IE/Mac *</br>
+清除浮动的几种方法：
+</br>
+</br>
+<div style="background-color:#FAFAFA">
+1，额外标签法<xmp style="display:inline-table;"><div style="clear:both;"></div></xmp>（缺点：不过这个办法会增加额外的标签使HTML结构看起来不够简洁。）</br>
+2，使用after伪类
+<p>#parent:after{<br>
+content:&quot;.&quot;;<br>
+height:0;<br>
+visibility:hidden;<br>
+display:block;<br>
+clear:both;<br>
+}</p>
+<p>3,浮动外部元素<br>
+4,设置<code>overflow</code>为<code>hidden</code>或者<code>auto</code></p>
+</div>
+<h2>end!</h2>
+<p><img src="https://wangjiajing.top/post-images/1584544938864.jpg" alt=""></p>
 
                         </div>
                         
@@ -207,7 +231,7 @@
 
                                                 <p class="copyright-item">
                                                     <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://wangjiajing.top/post/about">https://wangjiajing.top/post/about</a></span>
+                                                    <span><a href="https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie">https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -222,9 +246,9 @@
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wangjiajing.top/post/about"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wangjiajing.top/post/about&sharesource=qzone&title=关于&pics=https://wangjiajing.top/images/avatar.png?v=1584544957240&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://wangjiajing.top/post/about&sharesource=weibo&title=关于 + " - " + &pic="https://wangjiajing.top/images/avatar.png?v=1584544957240 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie&sharesource=qzone&title=浮动元素引起的问题和解决方法&pics=https://wangjiajing.top/images/avatar.png?v=1584544957240&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://wangjiajing.top/post/html-yu-xhtml-er-zhe-you-shi-me-qu-bie&sharesource=weibo&title=浮动元素引起的问题和解决方法 + " - " + &pic="https://wangjiajing.top/images/avatar.png?v=1584544957240 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -249,6 +273,10 @@
                                                                                 <section class="post-nav">
                                                                                     
                                                                                             
+                                                                                                <a class="next" rel="next" href="https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong">
+                                                                                                    LocalStorage与Cookie的异同
+                                                                                                </a>
+                                                                                                
                                                                                 </section>
                     </article>
                 </div>
