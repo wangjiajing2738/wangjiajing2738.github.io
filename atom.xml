@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangjiajing.top</id>
-    <title>Pandora </title>
-    <updated>2020-03-17T07:23:23.682Z</updated>
+    <title>Pandora  个人博客 </title>
+    <updated>2020-03-18T10:48:23.656Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangjiajing.top"/>
     <link rel="self" href="https://wangjiajing.top/atom.xml"/>
-    <subtitle>wjj个人博客</subtitle>
+    <subtitle>个人博客</subtitle>
     <logo>https://wangjiajing.top/images/avatar.png</logo>
     <icon>https://wangjiajing.top/favicon.ico</icon>
-    <rights>All rights reserved 2020, Pandora </rights>
+    <rights>All rights reserved 2020, Pandora  个人博客 </rights>
     <entry>
         <title type="html"><![CDATA[LocalStorage与Cookie的异同]]></title>
         <id>https://wangjiajing.top/post/localstorage-yu-cookie-de-yi-tong</id>
