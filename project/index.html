@@ -3,11 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html {
+            font-size: 15px;
+        }
+        #box {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .box_h1 {
+            color: #333;
+            font-family: Helvetica;
+            margin: 0;
+            padding: 0;
+            font-size: 8rem;
+            letter-spacing: -0.3rem;
+            position: relative;
+        }
+
+        .box_h1::after {
+            content: 'Welcome to My Project';
+            color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip-path: ellipse(100px 100px at 0% 50%);
+            -webkit-clip-path: ellipse(100px 100px at 0% 50%);
+            animation: spot 5s infinite;
+            background-image: url("gradienta-eN6FkYAetF8-unsplash.jpg");
+            background-size: 150%;
+            background-position: center center;
+            -webkit-background-clip: text;
+
+        }
+
+        @keyframes spot {
+            0% {
+                clip-path: ellipse(100px 100px at 0% 50%);
+            }
+            50% {
+                clip-path: ellipse(100px 100px at 100% 50%);
+            }
+            100% {
+                clip-path: ellipse(100px 100px at 0% 50%);
+            }
+        }
+        .nav_top{
+            width: 100%;
+            height: 70px;
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.4);
+        }
+
+        .content_a{
+            text-decoration: none;
+            color: #fff;
+            margin-right: 30px;
+            font-size: 16px;
+        }
+        .content_a:hover{
+            color: #2D96BD;
+        }
+        .div2{
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-<h2>
-    这是我的第一个项目
-    作者：王嘉靖
-</h2>
+<div class="nav_top">
+    <div class="content">
+        <a href="/" class="content_a">首页</a>
+        <a href="/archives" class="content_a">归档</a>
+        <a href="/post/about" class="content_a">关于</a>
+    </div>
+</div>
+<div id="box">
+    <h1 class="box_h1">Welcome to My Project</h1>
+</div>
+<h1 class="div2">暂未更新</h1>
 </body>
+
 </html>
